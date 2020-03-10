@@ -4616,11 +4616,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ugniu\\source\\repos\\BasicSelenium\\BasicSelenium\\BasicSelenium.csproj",
+      "projectUniqueName": "C:\\Users\\ugniu\\source\\repos\\test\\BasicSelenium\\BasicSelenium\\BasicSelenium.csproj",
       "projectName": "BasicSelenium",
-      "projectPath": "C:\\Users\\ugniu\\source\\repos\\BasicSelenium\\BasicSelenium\\BasicSelenium.csproj",
+      "projectPath": "C:\\Users\\ugniu\\source\\repos\\test\\BasicSelenium\\BasicSelenium\\BasicSelenium.csproj",
       "packagesPath": "C:\\Users\\ugniu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ugniu\\source\\repos\\BasicSelenium\\BasicSelenium\\obj\\",
+      "outputPath": "C:\\Users\\ugniu\\source\\repos\\test\\BasicSelenium\\BasicSelenium\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ugniu\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -32,9 +32,10 @@ namespace BasicSelenium.Tests
             var checkboxElementList4 = driver.FindElements(By.XPath("//ul/..//input[@class='cb1-element']"));
             var checkboxElementList5 = driver.FindElements(By.CssSelector(".cb1-element"));
             var checkboxElementList6 = driver.FindElements(By.CssSelector("input.cb1-element"));
+            var checkboxElementList7 = driver.FindElements(By.ClassName("cb1-element"));
 
-            Assert.AreEqual(4, checkboxElementList.Count);
-            foreach (var checkboxElement in checkboxElementList)
+            Assert.AreEqual(4, checkboxElementList7.Count);
+            foreach (var checkboxElement in checkboxElementList7)
             {
                 Assert.IsTrue(checkboxElement.Selected);
             }
