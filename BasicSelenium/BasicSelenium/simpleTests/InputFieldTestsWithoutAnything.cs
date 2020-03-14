@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 
 namespace BasicSelenium
 {
-    public class InputFieldTests
+    public class InputFieldTestsWithoutAnything
     {
         private IWebDriver driver;
         private InputDemoPage inputDemoPage;
