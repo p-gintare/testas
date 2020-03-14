@@ -3,3 +3,8 @@
 BasicSelenium/.vs/BasicSelenium/DesignTimeBuild/.dtbcache
 BasicSelenium/.vs/BasicSelenium/v16/.suo
 *.ide-wal
+*.ide
+*.dll
+*.pdb
+*.tmp
+*.cache
