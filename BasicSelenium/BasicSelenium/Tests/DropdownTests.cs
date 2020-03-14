@@ -12,6 +12,14 @@ namespace BasicSelenium.Tests
         IWebElement dropdown => driver.FindElement(By.Id("select-demo"));
 
         SelectElement dropdownSelectElement => new SelectElement(dropdown);
+        IWebElement displaySelectedDayElement => driver.FindElement(By.CssSelector(".selected-value"));
+
+        IWebElement multiSelect => driver.FindElement(By.Id("multi-select"));
+        SelectElement multiselectElement => new SelectElement(multiSelect);
+        IWebElement printSingleButton => driver.FindElement(By.Id("printMe"));
+        IWebElement showAllSelectedElement => driver.FindElement(By.CssSelector(".getall-selected"));
+        IWebElement floridaElement => multiselectElement.Options[1];
+        IWebElement printAllButton => driver.FindElement(By.Id("printAll"));
 
         [SetUp]
         public void BeforeTest()
@@ -23,8 +31,6 @@ namespace BasicSelenium.Tests
         public void TestsSingleDropDown()
         {
             dropdownSelectElement.SelectByValue("Wednesday");
-
-            var displaySelectedDayElement = driver.FindElement(By.CssSelector(".selected-value"));
             Assert.AreEqual("Day selected :- Wednesday", displaySelectedDayElement.Text);
             
             dropdownSelectElement.SelectByText("Monday");
@@ -37,32 +43,23 @@ namespace BasicSelenium.Tests
         [Test]
         public void MultiChoiseTests()
         {
-            var multiSelect = driver.FindElement(By.Id("multi-select"));
-            var multiselectElement = new SelectElement(multiSelect);
             multiselectElement.SelectByValue("Ohio");
-            var floridaElement = multiselectElement.Options[1];
 
             var builder = new Actions(driver);
             builder.KeyDown(Keys.Control);
             builder.Click(floridaElement);
             builder.KeyUp(Keys.Control);
             builder.Build().Perform();
-
-            var printSingleButton = driver.FindElement(By.Id("printMe"));
+            
             printSingleButton.Click();
 
-            var showAllSelectedElement = driver.FindElement(By.CssSelector(".getall-selected"));
             Assert.AreEqual("First selected option is : Ohio", showAllSelectedElement.Text);
-
         }
 
         [Test]
         public void MultiChoiseTests2()
         {
-            var multiSelect = driver.FindElement(By.Id("multi-select"));
-            var multiselectElement = new SelectElement(multiSelect);
             multiselectElement.SelectByValue("Ohio");
-            var floridaElement = multiselectElement.Options[1];
 
             var builder = new Actions(driver);
             builder.KeyDown(Keys.Control);
@@ -70,10 +67,8 @@ namespace BasicSelenium.Tests
             builder.KeyUp(Keys.Control);
             builder.Build().Perform();
 
-            var printAllButton = driver.FindElement(By.Id("printAll"));
             printAllButton.Click();
 
-            var showAllSelectedElement = driver.FindElement(By.CssSelector(".getall-selected"));
             Assert.AreEqual("Options selected are : Ohio,Florida", showAllSelectedElement.Text);
         }
     }
