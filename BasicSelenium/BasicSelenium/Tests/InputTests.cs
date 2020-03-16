@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using BasicSelenium.Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
 
 
@@ -6,39 +8,46 @@ namespace BasicSelenium.Tests
 {
     public class InputTests : BaseTest
     {
-        IWebElement messageElement => driver.FindElement(By.Id("user-message"));
-        IWebElement showMessageButton => driver.FindElement(By.CssSelector("#get-input button"));
-        IWebElement displayMessageElement => driver.FindElement(By.Id("display"));
-
-        IWebElement firstNumberElement => driver.FindElement(By.Id("sum1"));
-        IWebElement secondNumberElement => driver.FindElement(By.Id("sum2"));
-        IWebElement sumButton => driver.FindElement(By.CssSelector("#gettotal button"));
-
-        IWebElement displaySumElement => driver.FindElement(By.Id("displayvalue"));
+        private BasicFirstFormDemoPage basicFirstFormDemoPage;
 
         [SetUp]
         public void Setup()
         {
             driver.Url = "https://www.seleniumeasy.com/test/basic-first-form-demo.html";
+           
+            basicFirstFormDemoPage = new BasicFirstFormDemoPage(driver);
+            
         }
 
         [Test]
         public void TestUserCanSendAndViewMessage()
         {
-            messageElement.SendKeys("irasom teksta");
-            showMessageButton.Click();
-
-            Assert.AreEqual("irasom teksta", displayMessageElement.Text);
+            var myText = "beleka";
+            basicFirstFormDemoPage
+                .EnterMessage(myText)
+                .ClickShowMessage();
+            basicFirstFormDemoPage.AssertUserMessageIs(myText);
         }
 
         [Test]
         public void CountSum()
         {
-            firstNumberElement.SendKeys("5");
-            secondNumberElement.SendKeys("2");
-            sumButton.Click();
-            
-            Assert.AreEqual("7", displaySumElement.Text);
+           basicFirstFormDemoPage.EnterFirstNumber("1");
+           basicFirstFormDemoPage.EnterSecondNumber("3");
+           basicFirstFormDemoPage.ClickCalculateSum();
+           basicFirstFormDemoPage.AssertSum("4");
+        }
+
+        [Test]
+        public void CountSum2()
+        {
+            basicFirstFormDemoPage.EnterFirstAndSecondNumbers("1", "3");
+            basicFirstFormDemoPage.ClickCalculateSum();
+            basicFirstFormDemoPage.AssertSum("4");
+
+            driver.FindElement(By.CssSelector(".b-login-form--login-button")).Click();
+            Thread.Sleep(5000);
+            Assert.AreEqual("https://www.barbora.lt/akcijos", driver.Url);
         }
     }
 }
