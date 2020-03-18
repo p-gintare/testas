@@ -9,7 +9,7 @@ namespace BasicSelenium.Tests
         IWebElement checkboxAgeElement => driver.FindElement(By.Id("isAgeSelected"));
         private IWebElement showCheckedTextElement => driver.FindElement(By.Id("txtAge"));
 
-        IWebElement checkboxElement => driver.FindElement(By.Id("check1"));
+        private IWebElement checkboxElement => null; //driver.FindElement(By.Id("check1"));
         IList<IWebElement> checkboxElementList => driver.FindElements(By.CssSelector(".cb1-element"));
 
 

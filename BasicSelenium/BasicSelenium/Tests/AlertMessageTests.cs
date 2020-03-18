@@ -25,6 +25,8 @@ namespace BasicSelenium.Tests
         }
 
         private IWebElement WarningButton => driver.FindElement(By.Id("autoclosable-btn-warning"));
+
+
         private IWebElement WarningModal
         {
             get

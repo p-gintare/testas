@@ -9,7 +9,6 @@ namespace BasicSelenium
     public class InputFieldTestsWithoutAnything
     {
         private IWebDriver driver;
-        private InputDemoPage inputDemoPage;
 
         [SetUp]
         public void Setup()
@@ -18,18 +17,6 @@ namespace BasicSelenium
             driver.Url = "https://www.seleniumeasy.com/test/basic-first-form-demo.html";
             driver.Manage().Window.FullScreen();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            inputDemoPage = new InputDemoPage(driver);
-        }
-
-        [Test]
-        public void TestUserCanSendAndViewMessage()
-        {
-            var userMessage = "Test message";
-            inputDemoPage
-                .EnterText(userMessage)
-                .ClickShowMessage();
-
-            Assert.AreEqual(userMessage, inputDemoPage.GetUserMessage());
         }
 
         [Test]

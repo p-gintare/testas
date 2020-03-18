@@ -1,4 +1,7 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using BasicSelenium.Pages;
+using BasicSelenium.Values;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -9,67 +12,70 @@ namespace BasicSelenium.Tests
 {
     public class DropdownTests : BaseTest
     {
-        IWebElement dropdown => driver.FindElement(By.Id("select-demo"));
-
-        SelectElement dropdownSelectElement => new SelectElement(dropdown);
-        IWebElement displaySelectedDayElement => driver.FindElement(By.CssSelector(".selected-value"));
-
-        IWebElement multiSelect => driver.FindElement(By.Id("multi-select"));
-        SelectElement multiselectElement => new SelectElement(multiSelect);
-        IWebElement printSingleButton => driver.FindElement(By.Id("printMe"));
-        IWebElement showAllSelectedElement => driver.FindElement(By.CssSelector(".getall-selected"));
-        IWebElement floridaElement => multiselectElement.Options[1];
-        IWebElement printAllButton => driver.FindElement(By.Id("printAll"));
+        private DropDownPage dropDownPage = null;
 
         [SetUp]
         public void BeforeTest()
         {
             driver.Url = "https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html";
+           dropDownPage = new DropDownPage(driver);
         }
 
         [Test]
         public void TestsSingleDropDown()
         {
-            dropdownSelectElement.SelectByValue("Wednesday");
-            Assert.AreEqual("Day selected :- Wednesday", displaySelectedDayElement.Text);
-            
-            dropdownSelectElement.SelectByText("Monday");
-            Assert.AreEqual("Day selected :- Monday", displaySelectedDayElement.Text);
-
-            dropdownSelectElement.SelectByIndex(6);
-            Assert.AreEqual("Day selected :- Friday", displaySelectedDayElement.Text);
+            dropDownPage.SelectDay(WeekDay.MONDAY);
+          //  Assert.AreEqual($"Day selected :- {WeekDay.MONDAY.day}", displaySelectedDayElement.Text);
+          
         }
 
         [Test]
         public void MultiChoiseTests()
         {
-            multiselectElement.SelectByValue("Ohio");
-
-            var builder = new Actions(driver);
-            builder.KeyDown(Keys.Control);
-            builder.Click(floridaElement);
-            builder.KeyUp(Keys.Control);
-            builder.Build().Perform();
-            
-            printSingleButton.Click();
-
-            Assert.AreEqual("First selected option is : Ohio", showAllSelectedElement.Text);
+            dropDownPage
+            .SelectState(State.FLORIDA)
+            .SelectSecondState(State.CALIFORNIA)
+            .ClickPrintSingle()
+            .AssertFirstSelectedState(State.FLORIDA);
         }
 
         [Test]
         public void MultiChoiseTests2()
         {
-            multiselectElement.SelectByValue("Ohio");
+            dropDownPage
+                .SelectState(State.OHIO)
+                .SelectSecondState(State.CALIFORNIA)
+                .SelectSecondState(State.FLORIDA)
+                .ClickPrintSingle()
+                .AssertFirstSelectedState(State.OHIO)
+                .ClickPrintAll()
+                .AssertAllSelectedStates(new List<State>{State.OHIO, State.CALIFORNIA, State.FLORIDA});
+        }
 
-            var builder = new Actions(driver);
-            builder.KeyDown(Keys.Control);
-            builder.Click(floridaElement);
-            builder.KeyUp(Keys.Control);
-            builder.Build().Perform();
+        [Test]
+        public void MultiChoiseTests3()
+        {
+            dropDownPage
+                .SelectMultiStates(new List<State> { State.OHIO, State.CALIFORNIA, State.FLORIDA })
+                .ClickPrintSingle()
+                .AssertFirstSelectedState(State.OHIO)
+                .ClickPrintAll()
+                .AssertAllSelectedStates(new List<State> { State.OHIO, State.CALIFORNIA, State.FLORIDA });
 
-            printAllButton.Click();
 
-            Assert.AreEqual("Options selected are : Ohio,Florida", showAllSelectedElement.Text);
+        }
+
+        [Test]
+        public void MultiChoiseTests4()
+        {
+            dropDownPage
+                .SelectMultiStates2()
+                .ClickPrintSingle()
+                .AssertFirstSelectedState(State.CALIFORNIA)
+                .ClickPrintAll()
+                .AssertAllSelectedStates();
+
+
         }
     }
 }

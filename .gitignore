@@ -8,3 +8,11 @@ BasicSelenium/.vs/BasicSelenium/v16/.suo
 *.pdb
 *.tmp
 *.cache
+*.ide
+*.v2
+*.json
+*.pdb
+*.dll
+*.cache
+*.txt
+*.props

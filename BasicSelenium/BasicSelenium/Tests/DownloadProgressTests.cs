@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -32,9 +31,11 @@ namespace BasicSelenium.Tests
         public void TestDownload2()
         {
             downloadButton.Click();
+            // implicit wait = 3min
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
-            new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(
+            new WebDriverWait(driver, TimeSpan.FromSeconds(2)).Until(
                 ExpectedConditions.TextToBePresentInElement(finishedTextElement, "100%"));
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             Assert.AreEqual("100%", finishedTextElement.Text);
         }
 
@@ -43,8 +44,19 @@ namespace BasicSelenium.Tests
         public void TestDownload3()
         {
             downloadButton.Click();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
-            new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(d => finishedTextElement.Text == "100%");
+            try
+            {
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+                new WebDriverWait(driver, TimeSpan.FromSeconds(60)).Until(d => finishedTextElement.Text == "100%");
+            }
+            catch (WebDriverTimeoutException e)
+            {
+            }
+            finally
+            {
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            }
+            
             Assert.AreEqual("100%", finishedTextElement.Text);
         }
     }
