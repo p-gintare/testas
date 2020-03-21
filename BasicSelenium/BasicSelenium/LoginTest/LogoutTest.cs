@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace BasicSelenium.LoginTest
 {
@@ -10,7 +7,13 @@ namespace BasicSelenium.LoginTest
         [SetUp]
         public void Login()
         {
-            new LoginPage(Driver).Login(User.DefaultUser);
+            loginPage.Login(User.DefaultUser);
+        }
+
+        [Test]
+        public void TestLogout()
+        {
+            
         }
     }
 }

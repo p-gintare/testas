@@ -1,20 +1,10 @@
-﻿using BasicSelenium.LoginTest.Pages;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace BasicSelenium.LoginTest
 {
+    [TestFixture]
     public class LoginTest : BaseTest
     {
-        private LoginPage loginPage;
-        private HomePage homePage;
-
-        [SetUp]
-        public void InitPages()
-        {
-            loginPage = new LoginPage(Driver);
-            homePage = new HomePage(Driver);
-        }
-
         [Test]
         public void TestLogin()
         {
@@ -23,12 +13,13 @@ namespace BasicSelenium.LoginTest
                 .EnterPassword(User.DefaultUser.Password)
                 .ClickLogin()
                 .AssertLogoutIsVisible();
+            homePage.ClickLogout().AssertLoginButtonIsVisisble();
         }
 
         [TearDown]
         public void Logout()
         {
-            homePage.ClickLogout();
+            MakeScreenshotOnTestFailure();
         }
     }
 }

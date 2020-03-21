@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace BasicSelenium.LoginTest.Pages
 {
@@ -16,12 +15,18 @@ namespace BasicSelenium.LoginTest.Pages
 
         public void AssertLogoutIsVisible()
         {
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(4));
+            //wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("[target='_parent']")));
+
+            wait.Until(d => logoutElement.Displayed);
+            
             Assert.IsNotNull(logoutElement, "User was not logged in");
         }
 
-        public void ClickLogout()
+        public LoginPage ClickLogout()
         {
             logoutElement.Click();
+            return new LoginPage(Driver);
         }
     }
 }

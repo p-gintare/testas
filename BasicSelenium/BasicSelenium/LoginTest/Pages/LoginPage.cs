@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BasicSelenium.LoginTest.Pages;
+﻿using BasicSelenium.LoginTest.Pages;
+using NUnit.Allure.Core;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
+using System;
+using NUnit.Framework;
 
 namespace BasicSelenium.LoginTest
 {
@@ -14,14 +13,24 @@ namespace BasicSelenium.LoginTest
         }
 
         private IWebElement UsernameElement => Driver.FindElement(By.Id("txtUsername"));
+
+        public void AssertLoginButtonIsVisisble()
+        {
+            Assert.IsNotNull(LoginButton);
+        }
+
+        public void AssertLoggedIn()
+        {
+            Assert.IsNull(LoginButton);
+        }
+
         private IWebElement PasswordElement => Driver.FindElement(By.Id("txtPassword"));
         private IWebElement LoginButton => Driver.FindElement(By.Id("btnLogin"));
 
-
         public LoginPage EnterUsername(string username)
         {
-            //UsernameElement.SendKeys(username);
-            new Actions(Driver).SendKeys(UsernameElement, username);
+            UsernameElement.SendKeys(username);
+            //new Actions(Driver).SendKeys(UsernameElement, username);
             return this;
         }
 
