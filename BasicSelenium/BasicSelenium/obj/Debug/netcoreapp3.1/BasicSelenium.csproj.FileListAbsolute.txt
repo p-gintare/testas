@@ -103,6 +103,7 @@ C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreap
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\BasicSelenium.runtimeconfig.dev.json
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\BasicSelenium.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\BasicSelenium.pdb
+C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\Allure.Commons.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
@@ -113,9 +114,11 @@ C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreap
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.Utilities.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\testhost.dll
+C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\MimeTypesMap.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\nunit.framework.dll
+C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\NUnit.Allure.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\WebDriver.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
@@ -184,9 +187,12 @@ C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreap
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.csprojAssemblyReference.cache
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.AssemblyInfoInputs.cache
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.AssemblyInfo.cs
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.csproj.CopyComplete
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.dll
 C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.pdb
+C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.genruntimeconfig.cache
+C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.csprojAssemblyReference.cache
+C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\ugniu\source\repos\test\BasicSelenium\BasicSelenium\obj\Debug\netcoreapp3.1\BasicSelenium.csproj.CoreCompileInputs.cache

@@ -8,11 +8,14 @@ BasicSelenium/.vs/BasicSelenium/v16/.suo
 *.pdb
 *.tmp
 *.cache
+BasicSelenium/.vs/BasicSelenium/v16/Server/sqlite3/storage.ide
 *.ide
 *.v2
+*.ide
 *.json
 *.pdb
 *.dll
 *.cache
 *.txt
 *.props
+*.json

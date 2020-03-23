@@ -2,6 +2,7 @@
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
 using System;
+using Allure.Commons;
 using NUnit.Framework;
 
 namespace BasicSelenium.LoginTest
@@ -29,20 +30,33 @@ namespace BasicSelenium.LoginTest
 
         public LoginPage EnterUsername(string username)
         {
-            UsernameElement.SendKeys(username);
-            //new Actions(Driver).SendKeys(UsernameElement, username);
+            AllureLifecycle.Instance.WrapInStep(() =>
+                {
+                    UsernameElement.SendKeys(username);
+                },
+                $"Enter user name {username}");
+            
             return this;
         }
 
         public LoginPage EnterPassword(string password)
         {
-            PasswordElement.SendKeys(password);
+            AllureLifecycle.Instance.WrapInStep(() =>
+            {
+                PasswordElement.SendKeys(password);
+
+            }, "Enter password *******");
+            
             return this;
         }
 
         public HomePage ClickLogin()
         {
-            LoginButton.Click();
+            AllureLifecycle.Instance.WrapInStep(() =>
+            {
+                LoginButton.Click();
+            }, "click login");
+            
             return new HomePage(Driver);
         }
 

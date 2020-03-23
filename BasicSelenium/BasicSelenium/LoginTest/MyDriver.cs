@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BasicSelenium.Utils;
+using BasicSelenium.LoginTest.Api;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
 
 namespace BasicSelenium.LoginTest
 {
@@ -27,8 +26,22 @@ namespace BasicSelenium.LoginTest
                     break;
             }
 
-           // driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             return driver;
+        }
+
+        public static void SetCookies(IWebDriver driver)
+        {
+            driver.Manage().Cookies.AddCookie(new Cookie("Loggedin", "True", "s2.demo.opensourcecms.com", "/", null));
+        }
+
+        public static void WriteAllCookies(IWebDriver driver)
+        {
+            var cookies = driver.Manage().Cookies.AllCookies;
+            foreach (var cookie in cookies)
+            {
+               Console.WriteLine($" cookie: {cookie.Name} value: {cookie.Value} domain: {cookie.Domain} path: {cookie.Path}"); 
+            }
         }
 
         private static ChromeOptions GetChromeOptions()

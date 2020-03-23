@@ -42,9 +42,17 @@
               "target": "Package",
               "version": "[16.4.0, )"
             },
+            "NUnit.Allure": {
+              "target": "Package",
+              "version": "[1.0.6.2, )"
+            },
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[3.15.1, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.10.1, )"
             },
             "Selenium.Support": {
               "target": "Package",
@@ -57,6 +65,10 @@
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
               "version": "[80.0.3987.10600, )"
+            },
+            "Selenium.WebDriver.GeckoDriver": {
+              "target": "Package",
+              "version": "[0.26.0, )"
             },
             "nunit": {
               "target": "Package",
@@ -78,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

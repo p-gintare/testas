@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace BasicSelenium.LoginTest
 {
@@ -7,13 +8,14 @@ namespace BasicSelenium.LoginTest
         [SetUp]
         public void Login()
         {
-            loginPage.Login(User.DefaultUser);
+            Login2(User.DefaultUser);
         }
 
         [Test]
         public void TestLogout()
         {
-            
+            MyDriver.WriteAllCookies(Driver);
+            homePage.ClickLogout().AssertLoginButtonIsVisisble();
         }
     }
 }

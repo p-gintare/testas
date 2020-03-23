@@ -11,6 +11,7 @@
           "Microsoft.NET.Test.Sdk": "16.4.0",
           "NUnit.Allure": "1.0.6.2",
           "NUnit3TestAdapter": "3.15.1",
+          "RestSharp": "106.10.1",
           "Selenium.Support": "3.141.0",
           "Selenium.WebDriver": "3.141.0",
           "Selenium.WebDriver.ChromeDriver": "80.0.3987.10600",
@@ -398,6 +399,14 @@
           "System.Threading.Thread": "4.3.0",
           "System.Xml.XPath.XmlDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "RestSharp/106.10.1": {
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {
+            "assemblyVersion": "106.0.0.0",
+            "fileVersion": "106.10.1.0"
+          }
         }
       },
       "runtime.native.System/4.3.0": {
@@ -909,6 +918,13 @@
       "sha512": "sha512-gqy0llGjhJYq9ebFvtbmBcF/MY8z5kcTIxYs+eXwp2d4Ntha8pSPxUzryvBm7H46VbWI6FS5/XNbxwiQpe88vQ==",
       "path": "nunit3testadapter/3.15.1",
       "hashPath": "nunit3testadapter.3.15.1.nupkg.sha512"
+    },
+    "RestSharp/106.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MhR4w8LbArVaRA5T/oAR3ZnF852QXtDXRBO84GsvyYzsm7FsjXHJ+JaM8x/nR/B/OCB1WbolGH7hqMT1GZpNJw==",
+      "path": "restsharp/106.10.1",
+      "hashPath": "restsharp.106.10.1.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

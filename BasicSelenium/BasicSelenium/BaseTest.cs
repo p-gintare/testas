@@ -5,8 +5,10 @@ using OpenQA.Selenium.Chrome;
 
 namespace BasicSelenium.Tests
 {
-   public class BaseTest
+    [SetUpFixture]
+    public class BaseTest
    {
+       
        public IWebDriver driver;
 
        [SetUp]

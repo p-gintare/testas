@@ -1,8 +1,12 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using NUnit.Allure.Core;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace BasicSelenium.LoginTest
 {
-    [TestFixture]
+    
     public class LoginTest : BaseTest
     {
         [Test]
